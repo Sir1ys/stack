@@ -1,10 +1,12 @@
-type Props = {
+export type Props = {
   stackInstance: Number[];
   action: string;
   element?: number;
 };
 
 function stack({ stackInstance, action, element }: Props) {
-  return 1;
+  const insensitiveAction = action.toLowerCase();
+
+  if (insensitiveAction === "push") return [...stackInstance, element];
 }
 module.exports = stack;
