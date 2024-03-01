@@ -25,4 +25,12 @@ describe("stack", () => {
       1, 2, 3,
     ]);
   });
+
+  test("return true when the action is empty check and stack is empty", () => {
+    expect(stack({ stackInstance: [], action: "Empty cHeck" })).toBe(true);
+  });
+
+  test("return false when the action is empty check and stack isn't empty", () => {
+    expect(stack({ stackInstance: [1, 2], action: "Empty cHeck" })).toBe(false);
+  });
 });

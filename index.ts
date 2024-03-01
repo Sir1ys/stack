@@ -10,5 +10,7 @@ function stack({ stackInstance, action, element }: Props) {
   if (insensitiveAction === "push") return [...stackInstance, element];
 
   if (insensitiveAction === "pop") return [...stackInstance].slice(0, -1);
+
+  if (insensitiveAction === "empty check") return stackInstance.length === 0;
 }
 module.exports = stack;
