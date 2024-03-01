@@ -13,4 +13,16 @@ describe("stack", () => {
       stack({ stackInstance: [1, 2], action: "push", element: 3 })
     ).toEqual([1, 2, 3]);
   });
+
+  test("return stack instance when the action is pop", () => {
+    expect(stack({ stackInstance: [], action: "pop" })).toEqual([]);
+  });
+
+  test("return stack instance with the last element removed when the action is pop", () => {
+    expect(stack({ stackInstance: [1, 2], action: "pop" })).toEqual([1]);
+    expect(stack({ stackInstance: [1, 2, 3], action: "pop" })).toEqual([1, 2]);
+    expect(stack({ stackInstance: [1, 2, 3, 4], action: "pop" })).toEqual([
+      1, 2, 3,
+    ]);
+  });
 });
